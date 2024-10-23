@@ -33,9 +33,9 @@
     flex-direction:row-reverse;
     align-items:flex-end;
 
-14. order:2;
+14. order:1;
 
-15. order:-3;
+15. order:-1;
 
 16. align-self:flex-end;
 
