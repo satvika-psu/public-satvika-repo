@@ -6,18 +6,26 @@
     <title>02 - Search</title>
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" />
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    />
     <script defer src="02-data.js"></script>
     <script defer src="02-search.js"></script>
   </head>
-  <body>
-    <main>
-      <h1>Exercise 02 - Search</h1>
-      <div>
-        <label for="userInput">Search: </label>
-        <input type="text" id="userInput" />
-        <input type="button" value="Search Character: " />
-      </div>
+  <body class="bg-dark">
+    <main class="container my-5 bg-white">
+      <section class="my-5 p-3">
+        <h1 class="mb-5 text-center">Exercise 02 - Search</h1>
+        <div class="d-flex justify-content-center">
+          <input
+            type="text"
+            name="searchtext"
+            id="userInput"
+            aria-label="Search"
+          />
+          <input type="button" class="btn btn-primary ms-2" value="Search" />
+        </div>
+        <div id="searchResults" class="w-100"></div>
+      </section>
     </main>
   </body>
 </html>
