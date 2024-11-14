@@ -7,14 +7,113 @@
     <title>05 - Form</title>
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" />
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    />
     <script defer src="05-form.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
   </head>
-  <body>
-    <main>
-      <form>
-        <h1>Exercise 05 - Form</h1>
+  <body class="bg-dark">
+    <main class="container bg-light rounded w-50 p-4 mt-5">
+      <form id="user-form">
+        <h1 class="text-center mb-5">Exercise 05 - Form</h1>
+
+        <div class="mb-3">
+          <label for="name" class="form-label fw-bold">Name:</label>
+          <input type="text" id="name" class="form-control" required />
+        </div>
+
+        <div class="mb-3">
+          <label for="email" class="form-label fw-bold">Email:</label>
+          <input type="email" id="email" class="form-control" required />
+        </div>
+
+        <div class="mb-3">
+          <label for="regstatus" class="form-label fw-bold"
+            >Registration Status:</label
+          >
+
+          <select id="regstatus" class="form-select" required>
+            <option value="" disabled selected>Choose an option</option>
+            <option value="registered">Registered</option>
+            <option value="not_registered">Not Registered</option>
+            <option value="pending">Pending</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label fw-bold"
+            >Have you taken any of the following courses?</label
+          ><br />
+          <div class="form-check">
+            <input type="checkbox" id="course1" class="form-check-input" />
+            <label for="course1" class="form-check-label"
+              >Programming Languages</label
+            >
+          </div>
+          <div class="form-check">
+            <input type="checkbox" id="course2" class="form-check-input" />
+            <label for="course2" class="form-check-label"
+              >Operating Systems</label
+            >
+          </div>
+          <div class="form-check">
+            <input type="checkbox" id="course3" class="form-check-input" />
+            <label for="course3" class="form-check-label"
+              >Fullstack Web Development</label
+            >
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="comments" class="form-label fw-bold mb-2"
+            >Anything else?</label
+          >
+          <textarea id="comments" class="form-control" rows="4"></textarea>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <button type="submit" class="btn btn-primary w-100">Submit</button>
+          </div>
+          <div class="col">
+            <button type="reset" class="btn btn-secondary w-100">Reset</button>
+          </div>
+        </div>
       </form>
     </main>
+
+    <div
+      class="modal fade"
+      id="userModal"
+      tabindex="-1"
+      aria-labelledby="userModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="userModalLabel">
+              Submitted Information
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body" id="modal-body-content"></div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
