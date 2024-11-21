@@ -1,11 +1,11 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import './style.css';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import "./style.css";
 
-import List from './views/list';
-import Home from './views/Home';
-import Population from './views/population';
-import Lang from './views/lang';
+import List from "./views/list";
+import Home from "./views/Home";
+import Population from "./views/population";
+import Lang from "./views/lang";
 
 export default function App() {
   return (
@@ -28,12 +28,12 @@ export default function App() {
       </nav>
 
       <Routes>
-        <Route exact path="/" element={<Home title="Home Page" />} />
+        <Route path="/" element={<Home title="Home Page" />} />
         <Route
           path="/list"
           element={<List title="List of all avaiable countries" />}
-        />{' '}
-        <Route path="/Population" element={<Population />} />
+        />{" "}
+        <Route path="/population" element={<Population />} />
         <Route path="/lang" element={<Lang />} />
       </Routes>
     </Router>

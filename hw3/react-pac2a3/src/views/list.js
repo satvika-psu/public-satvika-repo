@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import "./List.css";
 const List = ({ title }) => {
-  const url = 'https://cs464p564-frontend-api.vercel.app/api/countries';
+  const url = "https://cs464p564-frontend-api.vercel.app/api/countries";
 
   // state variables
   const [list, setList] = useState([]);
@@ -25,48 +26,49 @@ const List = ({ title }) => {
     <main>
       <h1>{title}</h1>
       {!isLoaded && <div>Loading... </div>}
-      <ul>
+      <div className="card-grid">
         {list.map((country) => {
           return (
-            <li key={country.id}>
+            <div className="card" key={country.id}>
               <h2>
-                {country.name ? country.name : 'Country Name Unavailable'}
+                {country.name ? country.name : "Country Name Unavailable"}
               </h2>
 
               {country.flag_png ? (
                 <img
                   src={country.flag_png}
-                  alt={country.flag_alt || 'Flag'}
+                  alt={country.flag_alt || "Flag"}
                   width="100"
+                  className="flag"
                 />
               ) : (
                 <p>Flag Unavailable</p>
               )}
 
               <p>
-                <strong>Official Languages:</strong>{' '}
+                <strong>Official Languages:</strong>{" "}
                 {country.official_languages
-                  ? country.official_languages.join(', ')
-                  : 'Data Unavailable'}
+                  ? country.official_languages.join(", ")
+                  : "Data Unavailable"}
               </p>
 
               <p>
-                <strong>Population:</strong>{' '}
+                <strong>Population:</strong>{" "}
                 {country.population
                   ? country.population.toLocaleString()
-                  : 'Data Unavailable'}
+                  : "Data Unavailable"}
               </p>
 
               <p>
-                <strong>GDP:</strong>{' '}
+                <strong>GDP:</strong>{" "}
                 {country.gdp_billions
                   ? `$${country.gdp_billions} billion`
-                  : 'Data Unavailable'}
+                  : "Data Unavailable"}
               </p>
-            </li>
+            </div>
           );
         })}
-      </ul>
+      </div>
     </main>
   );
 };
